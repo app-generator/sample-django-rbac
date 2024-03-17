@@ -9,5 +9,5 @@ build/
 env
 
 #src
-*.sqlite*
+#*.sqlite*
 
