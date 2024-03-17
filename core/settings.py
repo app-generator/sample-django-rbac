@@ -44,6 +44,10 @@ INSTALLED_APPS = [
 
     # Util
     "debug_toolbar",
+
+
+    # #third_party
+    # 'rbac',
 ]
 
 MIDDLEWARE = [

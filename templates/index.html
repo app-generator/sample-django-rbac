@@ -1,0 +1,16 @@
+{% extends 'layouts/base.html' %}
+
+
+{% block body %}
+<div class="container">
+    <h2 class="mt-5">this is index html</h2>
+   
+    <a href="{% url 'logout' %}" class="btn btn-primary mb-3">logout</a> <br>
+    <a href="{% url 'route1' %}"  class="btn btn-primary mb-3">route 1 (if login with user_1 & user_2)</a> <br>
+    <a href="{% url 'route2' %}"  class="btn btn-primary">route 2 (if login with user_3 & user_4)</a>
+</div>
+    
+
+{% endblock body %}
+    
+
