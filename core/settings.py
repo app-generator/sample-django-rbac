@@ -46,8 +46,9 @@ INSTALLED_APPS = [
     "debug_toolbar",
 
 
-    # #third_party
-    # 'rbac',
+    #third_party
+    'django_prbac',
+    
 ]
 
 MIDDLEWARE = [
