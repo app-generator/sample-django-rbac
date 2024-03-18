@@ -15,29 +15,19 @@ def index(request):
     return render(request, 'index.html')
 
 def is_route1(user):
-    return user.has_perm('app.can_access_route1')
+    return user.username in ['user_1', 'user_2']
 
 def is_route2(user):
-    return user.has_perm('app.can_access_route2')
+    return user.username in ['user_3', 'user_4']
 
-@permission_required('app.can_access_route1', raise_exception=True)
+
+
+@user_passes_test(is_route1)
 def route1(request):
-    # Assign users to group1
-    users = User.objects.filter(username__in=['user_1', 'user_2'])
-    group1 = Group.objects.get(name='group1')
-    for user in users:
-        user.groups.add(group1)
-
     return render(request, 'route1.html')
 
-@permission_required('app.can_access_route2', raise_exception=True)
+@user_passes_test(is_route2)
 def route2(request):
-    # Assign users to group2
-    users = User.objects.filter(username__in=['user_3', 'user_4'])
-    group2 = Group.objects.get(name='group2')
-    for user in users:
-        user.groups.add(group2)
-
     return render(request, 'route2.html')
 
 # authentication
